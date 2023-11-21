@@ -1,3 +1,4 @@
+import java.util.Scanner;
 class Employee{
 	String name;
 	int age;
@@ -19,6 +20,8 @@ class Employee{
 		System.out.println("The salary of " + name +" is" + salary);
 	}
 	
+	
+	
 }
 
 class Officer extends Employee{
@@ -28,6 +31,11 @@ class Officer extends Employee{
 	{
 		super(name,age,phoneNo,address,salary);
 		this.specialization=specialization;
+	}
+	
+    void printDetails()
+	{
+        System.out.println("Name: "+name+"\n"+"Age: "+age+"\n"+"Phone no.: "+phoneNo+"\n"+"Address: "+address+"\n"+"Salary: "+salary+"\n"+"Specialization: "+specialization);
 	}
 	
 	
@@ -42,26 +50,58 @@ class Manager extends Employee{
 		this.department=department;
 	}
 	
+    void printDetails()
+	{
+        System.out.println("Name: "+name+"\n"+"Age: "+age+"\n"+"Phone no.: "+phoneNo+"\n"+"Address: "+address+"\n"+"Salary: "+salary+"\n"+"Department: "+department);
+	}
+	
 	
 }
 
 
-class Inheritence_57{
+class Inheritance_57{
 	public static void main(String args[]){
-		Officer o1=new Officer("Thara",15,233074,"No.12 MG Street" , 11760,"Market");
-		Manager m1=new Manager("Sheeba",25,233232,"No.10 MG Street ", 117680,"Accounts");
-		System.out.println(o1.name+"  "+o1.age+"  "+o1.phoneNo+"  "+o1.address+"  "+o1.salary+"  "+o1.specialization);
-		System.out.println(m1.name+"  "+m1.age+"  "+ m1.phoneNo+"  " +m1.address+"  "+m1.salary+"  "+m1.department);
+	    Scanner s=new Scanner(System.in);
+	    String name,address,specialization,department,str;
+	    int age,ph;
+	    double salary;
+	    System.out.println("Enter the details of the officer");
+	    System.out.println("Name:");
+	    name=s.nextLine();
+	    System.out.println("Age:");
+	    age=s.nextInt();
+	    System.out.println("Phone no.:");
+	    ph=s.nextInt();
+	    System.out.println("Address:");
+	    str=s.nextLine();
+	    address=s.nextLine();
+	    System.out.println("Specialization:");
+	    specialization=s.nextLine();
+	    System.out.println("Salary:");
+	    salary=s.nextDouble();
+		Officer o1=new Officer(name,age,ph,address,salary,specialization);
 		
+		
+        System.out.println("Enter the details of the manager");
+	    System.out.println("Name:");
+	    str=s.nextLine();
+	    name=s.nextLine();
+	    System.out.println("Age:");
+	    age=s.nextInt();
+	    System.out.println("Phone no.:");
+	    ph=s.nextInt();
+	    System.out.println("Address:");
+	    str=s.nextLine();
+	    address=s.nextLine();
+	    System.out.println("Department:");
+	    department=s.nextLine();
+	    System.out.println("Salary:");
+	    salary=s.nextDouble();
+		Manager m1=new Manager(name,age,ph,address,salary,department);
+        System.out.println("Displaying the details");
+        System.out.println("Officer");
+        o1.printDetails();
+        System.out.println("Manager");
+        m1.printDetails();
 	}
 }
-
-
-
-
-
-
-
-
-	
-
