@@ -1,3 +1,4 @@
+import java.util.Scanner;
 class Complex{
 	int real;
 	int imaginary;
@@ -20,8 +21,16 @@ class Complex{
 
  class Complex_57{
  	public static void main(String args[]){
- 		Complex c1=new Complex(10,4);
- 		Complex c2=new Complex(4,7);
+ 	    Scanner s=new Scanner(System.in);
+ 	    System.out.println("Enter the first number");
+ 	    int r1,i1,r2,i2;
+ 	    r1=s.nextInt();
+ 	    i1=s.nextInt();
+ 	    System.out.println("Enter the second number");
+ 	    r2=s.nextInt();
+ 	    i2=s.nextInt();
+ 		Complex c1=new Complex(r1,i1);
+ 		Complex c2=new Complex(r2,i2);
  		c2.product(c1);
  	
  	}
